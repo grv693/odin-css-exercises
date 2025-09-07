@@ -35,9 +35,10 @@ button {
   top: 50%;
   left: 50%;
   transform-origin: center;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -70%); /* Start higher than center */
   opacity: 0%;
+  pointer-events: none;
   text-align: center;
 }
 
@@ -53,9 +54,11 @@ button {
   opacity: 0%;
 }
 
+/* When modal is shown, move it to center and fade in */
 .popup-modal.show {
   opacity: 100%;
   pointer-events: all;
+  transform: translate(-50%, -50%);
 }
 
 .backdrop.show {
